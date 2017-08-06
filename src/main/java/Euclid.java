@@ -2,20 +2,15 @@ import java.util.Scanner;
 
 public class Euclid {
     private static int euclid(int a, int b) {
+        if (a == b) return a;
 
         do {
-            if (a == b) {
-                return a;
+            if (a > b) {
+                a = a - b;
             } else {
-                if (a > b) {
-                    a = a - b;
-                } else {
-                    b = b - a;
-                }
+                b = b - a;
             }
-        }
-
-        while (a != b);
+        } while (a != b);
 
         return a;
     }
