@@ -1,13 +1,7 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class BubbleSort {
-    private static void printArray(int[] array) {
-        for (int number: array) {
-            System.out.print(number + " ");
-        }
-        System.out.println("");
-    }
-
     private static int[] bubbleSort(int[] array) {
         boolean isOrderChanged = true;
 
@@ -33,7 +27,7 @@ public class BubbleSort {
             array[i] = random.nextInt(100);
         }
 
-        printArray(array);
-        printArray(bubbleSort(array));
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(bubbleSort(array)));
     }
 }
