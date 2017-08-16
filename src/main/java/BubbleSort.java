@@ -8,7 +8,7 @@ public class BubbleSort {
         System.out.println("");
     }
 
-    private static void bubbleSort(int[] array) {
+    private static int[] bubbleSort(int[] array) {
         boolean isOrderChanged = true;
 
         while (isOrderChanged) {
@@ -23,7 +23,7 @@ public class BubbleSort {
             }
         }
 
-        printArray(array);
+        return array;
     }
 
     public static void main(String[] args) {
@@ -34,6 +34,6 @@ public class BubbleSort {
         }
 
         printArray(array);
-        bubbleSort(array);
+        printArray(bubbleSort(array));
     }
 }
