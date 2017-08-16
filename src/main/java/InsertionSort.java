@@ -1,13 +1,7 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class InsertionSort {
-    private static void printArray(int[] array) {
-        for (int number : array) {
-            System.out.print(number + " ");
-        }
-        System.out.println("");
-    }
-
     private static int[] insertionSort(int[] array) {
         for (int i = 1; i < array.length; i++) {
             if (array[i] < array[i - 1]) {
@@ -31,7 +25,7 @@ public class InsertionSort {
             array[i] = random.nextInt(100);
         }
 
-        printArray(array);
-        printArray(insertionSort(array));
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(insertionSort(array)));
     }
 }
