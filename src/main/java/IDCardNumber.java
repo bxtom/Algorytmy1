@@ -91,8 +91,34 @@ public class IDCardNumber {
         return sum % 10 == controlDigit;
     }
 
+    private static boolean validateId(String idNumber) {
+
+        if (idNumber.length() != 9) {
+            return false;
+        }
+
+        for (int i = 0; i< 3; i++) {
+            int temp = idNumber.charAt(i);
+            if (temp < 65 && temp > 90) {
+                return false;
+            }
+        }
+
+        for (int i=3; i < 9; i++) {
+            int temp = idNumber.charAt(i);
+            temp -= 48;
+            if(temp < 0 && temp > 9) {
+                return false;
+            }
+        }
+
+
+        return true;
+    }
+
     public static void main(String[] args) {
-        String number = "ABS 123456";
+        String number = "ABS123456";
+        System.out.println("Is " + number + " valid? " + validateId(number));
         System.out.println("Is " + number + " valid? " + isValid(number));
         System.out.println("Is " + number + " valid? " + isValid2(number));
         System.out.println("Is " + number + " valid? " + isValid3(number));
