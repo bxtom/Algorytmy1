@@ -75,19 +75,15 @@ public class IDCardNumber {
         for (int i = 4; i < 9; i++) {
             switch (i) {
                 case 4:
+                case 7:
                     sum += Character.getNumericValue(number.charAt(i)) * 7;
                     break;
                 case 5:
+                case 8:
                     sum += Character.getNumericValue(number.charAt(i)) * 3;
                     break;
                 case 6:
                     sum += Character.getNumericValue(number.charAt(i));
-                    break;
-                case 7:
-                    sum += Character.getNumericValue(number.charAt(i)) * 7;
-                    break;
-                case 8:
-                    sum += Character.getNumericValue(number.charAt(i)) * 3;
                     break;
             }
         }
