@@ -3,7 +3,8 @@ import java.util.Arrays;
 
 public class Eratosthenes {
     private static int[] sieveOfEratosthenes2(int[] array) {
-        for (int i = 0; i < Math.floor(Math.sqrt(array.length)); i++) {
+        int sqrt = (int) Math.floor(Math.sqrt(array.length));
+        for (int i = 0; i < array.length; i++) {
             int numberToCompare = array[i];
             if (numberToCompare != 0) {
                 for (int j = i + 1; j < array.length; j++) {
@@ -11,6 +12,10 @@ public class Eratosthenes {
                         array[j] = 0;
                     }
                 }
+            }
+
+            if (array[i] > sqrt) {
+                break;
             }
         }
 
