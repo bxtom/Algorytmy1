@@ -2,7 +2,8 @@ package Queue;
 
 public class InvokeQueue {
     public static void main(String[] args) {
-        invokeQueueOnArray();
+        //invokeQueueOnArray();
+        invokeQueue();
     }
 
     public static void invokeQueueOnArray() {
@@ -19,5 +20,19 @@ public class InvokeQueue {
         System.out.println("Peak: " + queueOnArray.getPickOfQueue());
         queueOnArray.printQueue();
         System.out.println("isEmpty? " + queueOnArray.isEmpty());
+    }
+
+    public static void invokeQueue() {
+        Queue queue = new Queue();
+        System.out.println("isEmpty? " + queue.isEmpty());
+        queue.addToQueue(10);
+        queue.addToQueue(11);
+        queue.addToQueue(5);
+        queue.printQueue();
+        System.out.println("isEmpty? " + queue.isEmpty());
+        System.out.println("Peak: " + queue.getPeakOfQueue());
+        System.out.println("Last added: " + queue.getLastAdded());
+        System.out.println("Removed: " + queue.removeFromQueue());
+        System.out.println("Peak: " + queue.getPeakOfQueue());
     }
 }
