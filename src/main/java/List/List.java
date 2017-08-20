@@ -36,11 +36,36 @@ public class List {
         if (temp != null) {
             do {
                 if (temp.getValue() == value) {
+                    // TODO sprwdzic nulle
                     temp.getPrev().setNext(temp.getNext());
                     temp.getNext().setPrev(temp.getPrev());
                 }
             } while (temp.getNext() != null);
 
+        }
+    }
+
+    public void printQueue() {
+        if (this.first != null) {
+            ListElement item = this.first;
+
+            do {
+                System.out.println(item.getValue());
+                item = item.getNext();
+            } while (item.getNext() != null);
+            System.out.println(item.getValue());
+        }
+    }
+
+    public void printReversedQueue() {
+        if (this.last != null) {
+            ListElement item = this.last;
+
+            do {
+                System.out.println(item.getValue());
+                item = item.getPrev();
+            } while (item.getPrev() != null);
+            System.out.println(item.getValue());
         }
     }
 }

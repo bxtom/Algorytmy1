@@ -6,6 +6,8 @@ public class InvokeList {
         list.addToList(11);
         list.addToList(10);
         list.addToList(5);
-        list.removeByValue(10);
+        //list.removeByValue(10);
+        list.printQueue();
+        list.printReversedQueue();
     }
 }
