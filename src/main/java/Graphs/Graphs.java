@@ -19,7 +19,10 @@ public class Graphs {
 
     public static void transformEtoA(int n, int k) {
         Edge[] graphGnk = GraphGnk.generateGnk(n, k);
+        PrintStructures.printE(graphGnk);
         boolean[][] result = Transforms.transformEtoA(n, k, graphGnk);
         PrintStructures.printA(result);
     }
+
+    // TODO transform A to E
 }
