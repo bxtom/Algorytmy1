@@ -26,7 +26,6 @@ public class QuickSort {
             int temp = array[i + 1];
             array[i + 1] = array[hi];
             array[hi] = temp;
-
         }
 
         i++;
