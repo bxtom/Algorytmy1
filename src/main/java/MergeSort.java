@@ -2,24 +2,24 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class MergeSort {
-    private static int[] mergeSort(int[] array) {
-        if (array.length <= 1)
-            return array;
+    private static int[] mergeSort(int[] inputArray) {
+        if (inputArray.length <= 1)
+            return inputArray;
 
-        int sizeOfLeftArray = array.length / 2;
-        int sizeOfRightArray = array.length - sizeOfLeftArray;
+        int sizeOfLeftArray = inputArray.length / 2;
+        int sizeOfRightArray = inputArray.length - sizeOfLeftArray;
 
         int inputArrayIndex = 0;
 
         int[] leftArray = new int[sizeOfLeftArray];
         for (int i = 0; i < sizeOfLeftArray; i++) {
-            leftArray[i] = array[inputArrayIndex];
+            leftArray[i] = inputArray[inputArrayIndex];
             inputArrayIndex++;
         }
 
         int[] rightArray = new int[sizeOfRightArray];
         for (int i = 0; i < sizeOfRightArray; i++) {
-            rightArray[i] = array[inputArrayIndex];
+            rightArray[i] = inputArray[inputArrayIndex];
             inputArrayIndex++;
         }
 
