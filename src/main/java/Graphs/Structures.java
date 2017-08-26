@@ -16,4 +16,13 @@ public class Structures {
 
         return result;
     }
+
+    public static Edge2[] genaerateEdge2Array(int n) {
+        Edge[] e = generateEdgeArray(n);
+        Edge2[] result = new Edge2[e.length];
+        for (int i = 0; i < e.length; i++) {
+            Edge2 item = new Edge2(e[i].getA(), e[i].getB(), false);
+            result[i] = item;
+        }
+    }
 }

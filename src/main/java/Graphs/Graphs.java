@@ -5,7 +5,8 @@ public class Graphs {
         //generateGraph(4, 0.5);
         //generateGnk(4, 3);
         //transformEtoA(4, 3);
-        transformAtoE(4, 0.5);
+        //transformAtoE(4, 0.5);
+
     }
 
     public static void generateGraph(int numberOfVertices, double probability) {
