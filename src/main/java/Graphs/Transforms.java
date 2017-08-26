@@ -13,4 +13,33 @@ public class Transforms {
 
         return result;
     }
+
+    public static Edge[] transformAtoE(boolean[][] a, int n) {
+        Edge[] result = Structures.generateEdgeArray(n);
+        int index = result.length - 1;
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (a[i][j]) {
+                    moveItem(result, i, j, index);
+                    index--;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public static Edge[] moveItem(Edge[] result, int i, int j, int index) {
+        for (int k = 0; k < result.length; k++) {
+            if (result[k].getA() == i && result[k].getB() == j) {
+                Edge temp = result[k];
+                result[k] = result[index];
+                result[index] = temp;
+                break;
+            }
+        }
+
+        return result;
+    }
 }
