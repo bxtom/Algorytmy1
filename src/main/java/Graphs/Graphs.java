@@ -7,6 +7,10 @@ public class Graphs {
         //transformEtoA(4, 3);
         //transformAtoE(4, 0.5);
 
+        boolean[][] a = GraphGnp.generateGnp(4, 0.5);
+        PrintStructures.printA(a);
+        System.out.println(Triangles.getGraphTrianglesCounter(a, 4));
+
     }
 
     public static void generateGraph(int numberOfVertices, double probability) {
