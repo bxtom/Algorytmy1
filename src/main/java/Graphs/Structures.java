@@ -24,5 +24,7 @@ public class Structures {
             Edge2 item = new Edge2(e[i].getA(), e[i].getB(), false);
             result[i] = item;
         }
+
+        return result;
     }
 }

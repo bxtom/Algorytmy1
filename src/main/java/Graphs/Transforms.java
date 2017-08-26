@@ -30,6 +30,27 @@ public class Transforms {
         return result;
     }
 
+    public static StructS[] transformAtoS(boolean[][] a, int n) {
+        StructS[] result = new StructS[n];
+        for (int i = 0; i < n; i++) {
+            StructS temp = new StructS();
+            result[i] = temp;
+        }
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (a[i][j]) {
+                    result[i].getCollection().add(j);
+                    result[i].setCounter(result[i].getCounter() + 1);
+                    result[j].getCollection().add(i);
+                    result[j].setCounter(result[j].getCounter() + 1);
+                }
+            }
+        }
+
+        return result;
+    }
+
     public static Edge[] moveItem(Edge[] result, int i, int j, int index) {
         for (int k = 0; k < result.length; k++) {
             if (result[k].getA() == i && result[k].getB() == j) {
