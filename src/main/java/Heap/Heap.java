@@ -1,39 +1,49 @@
 package Heap;
 
-public class Heap {
+class Heap {
     private HeapElement top = null;
 
-    public void addToHeap(int value) {
+    void addToHeap(int value) {
         this.top = new HeapElement(value, this.top);
     }
 
-    public int removeFromHeap() {
+    void removeFromHeap() {
         if (this.top != null) {
-            int temp = top.getValue();
+//            int temp = top.getValue();
             this.top = top.getPrev();
-            return temp;
         }
-
-        return -1;
     }
 
-    public boolean isEmpty() {
+    void removeByValue(int value) {
+        if (this.top != null) {
+            HeapElement temp = this.top;
+            do {
+                if (this.top.getValue() == value) {
+                    if (temp == null) {
+                        this.top = this.top.getPrev();
+                    }
+                }
+                temp = this.top.getPrev();
+            } while (temp != null);
+        }
+    }
+
+    boolean isEmpty() {
         return this.top == null;
     }
 
-    public int getPickOfHeap() {
+    int getPickOfHeap() {
         if(!this.isEmpty())
             return this.top.getValue();
         else
             return -1;
     }
 
-    public void printHeap() {
+    void printHeap() {
         HeapElement temp = new HeapElement(top);
         while(this.top != null) {
             System.out.println(this.top.getValue());
             temp = temp.getPrev();
         }
     }
-
 }
