@@ -7,10 +7,17 @@ public class Graphs {
         //transformEtoA(4, 3);
         //transformAtoE(4, 0.5);
 
-        boolean[][] a = GraphGnp.generateGnp(4, 0.5);
-        PrintStructures.printA(a);
-        System.out.println(Triangles.getGraphTrianglesCounter(a, 4));
+//        boolean[][] a = GraphGnp.generateGnp(4, 0.5);
+//        PrintStructures.printA(a);
+//        System.out.println(Triangles.getGraphTrianglesCounter(a, 4));
 
+        generateGnf(4, 2);
+
+    }
+
+    public static void generateGnf(int vertexNumber, int maxVertexdegree) {
+        Edge2[] edges2Array = GraphGnf.generateGraphGnf(vertexNumber, maxVertexdegree);
+        PrintStructures.printE2(edges2Array);
     }
 
     public static void generateGraph(int numberOfVertices, double probability) {

@@ -42,9 +42,10 @@ public class Edge2 {
 
     @Override
     public String toString() {
-        return "Edge{" +
+        return "Edge2{" +
                 "a=" + a +
                 ", b=" + b +
+                ", flag=" + flag +
                 '}';
     }
 }
