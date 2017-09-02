@@ -85,6 +85,17 @@ public class BucketSort {
         }
 
         System.out.println(Arrays.toString(cashBuckets));
+
+        int index = 0;
+
+//        for (int i = 0; i < cashBuckets.length; i++) {
+//            for (int j = 0; j < cashBuckets[i]; j++) {
+//
+//                sult.append(cashMap.get(i)).append(", ");
+//            }
+//        }
+
+
 //        System.out.println(printSortedCashArray(bucketSort(array), cashMap));
     }
 }
