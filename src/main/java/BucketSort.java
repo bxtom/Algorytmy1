@@ -88,10 +88,12 @@ public class BucketSort {
 
         int index = 0;
 
+//  to trzeba poprawic
 //        for (int i = 0; i < cashBuckets.length; i++) {
 //            for (int j = 0; j < cashBuckets[i]; j++) {
-//
+//                cashArray[index] =
 //                sult.append(cashMap.get(i)).append(", ");
+//                index++
 //            }
 //        }
 
