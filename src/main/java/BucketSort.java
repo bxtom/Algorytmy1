@@ -1,10 +1,24 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.stream.IntStream;
 
 public class BucketSort {
 
-    private static int[] denominations = {1, 2, 5, 10, 20, 50, 100, 200, 500};
+
+    private static String printSortedCashArray(int[] array, Map<Integer, Integer> cashMap) {
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i]; j++) {
+                result.append(cashMap.get(i)).append(", ");
+            }
+        }
+
+        return "[" + result.toString() + "]";
+    }
 
     private static String printSortedArray(int[] array) {
         StringBuilder result = new StringBuilder();
@@ -26,6 +40,14 @@ public class BucketSort {
         return buckets;
     }
 
+    private static int[] bucketSortCash(int[] array) {
+        int[] buckets = new int[9];
+
+        //IntStream.of(array).forEach(valueFromInputArray -> buckets[valueFromInputArray.]++);
+
+        return buckets;
+    }
+
     public static void main(String[] args) {
         Random random = new Random();
         int[] array = new int[100];
@@ -38,14 +60,31 @@ public class BucketSort {
         System.out.println(printSortedArray(bucketSort(array)));
 
 
-        int[] cash = new int[10];
-        for (int i = 0; i < cash.length; i++) {
-            cash[i] = denominations[random.nextInt(denominations.length)];
+        // cash
+
+        int[] denominations = {1, 2, 5, 10, 20, 50, 100, 200, 500};
+
+        int[] cashArray = new int[100];
+        for (int i = 0; i < cashArray.length; i++) {
+            cashArray[i] = denominations[random.nextInt(denominations.length)];
         }
 
         System.out.println("");
-        System.out.println(Arrays.toString(cash));
+        System.out.println(Arrays.toString(cashArray));
 
-        int[] cashBuckets = new int[9];
+        int[] cashBuckets = new int[denominations.length];
+
+        Map<Integer, Integer> cashMap = new HashMap<>();
+
+        for (int i = 0; i < denominations.length; i++) {
+            cashMap.put(denominations[i], i);
+        }
+
+        for (int cash : cashArray) {
+            cashBuckets[cashMap.get(cash)]++;
+        }
+
+        System.out.println(Arrays.toString(cashBuckets));
+//        System.out.println(printSortedCashArray(bucketSort(array), cashMap));
     }
 }
