@@ -10,12 +10,21 @@ public class VectorMatrix {
         int[] result = new int[N];
 
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                result[i] += vector[j] * matrix[i][j];
+            innerLoop(matrix[i], vector, result, i);
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
 
         return result;
+    }
+
+    private static void innerLoop(int[] matrix, int[] vector, int[] result, int i) {
+        for (int j = 0; j < N; j++) {
+            result[i] += vector[j] * matrix[j];
+        }
     }
 
     private static int[] multiplyUsingStreams(int[][] matrix, int[] vector) {
