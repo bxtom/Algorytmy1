@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class VectorMatrix {
-    private static final int N = 10;
+    private static final int N = 10000;
     private static final int BOUND = 10;
 
     private static int[] multiply(int[][] matrix, int[] vector) {
@@ -12,7 +12,7 @@ public class VectorMatrix {
         for (int i = 0; i < N; i++) {
             innerLoop(matrix[i], vector, result, i);
             try {
-                Thread.sleep(10000);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -50,12 +50,14 @@ public class VectorMatrix {
             }
         }
 
-        System.out.println(Arrays.toString(vector));
-        System.out.println("");
-        Arrays.stream(matrix).forEach(array -> System.out.println(Arrays.toString(array)));
-        System.out.println("");
-        System.out.println(Arrays.toString(multiply(matrix, vector)));
-        System.out.println("");
-        System.out.println(Arrays.toString(multiplyUsingStreams(matrix, vector)));
+        //System.out.println(Arrays.toString(vector));
+        //System.out.println("");
+        //Arrays.stream(matrix).forEach(array -> System.out.println(Arrays.toString(array)));
+        //System.out.println("");
+        //System.out.println(Arrays.toString(multiply(matrix, vector)));
+        //System.out.println("");
+        //System.out.println(Arrays.toString(multiplyUsingStreams(matrix, vector)));
+
+        Arrays.toString(multiply(matrix, vector));
     }
 }
